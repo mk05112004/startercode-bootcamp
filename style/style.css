@@ -1,0 +1,452 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg,#003d26,#1f3e7a);
+    height: 100vh;
+    display: grid;
+    place-items: center;
+
+    
+}
+h1{
+    color: white;
+    filter: 5px 5px #b3ccff;
+}
+
+.container{
+    background-color: #fff;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    height: auto;
+    width: 58%;
+    font-family: 'poppins' ,sans-serif;
+    border-radius: 20px;
+    margin-top: 1%;
+
+}
+.img{
+    grid-column: 1/2;
+    & >img{
+        width: 300px;
+        height: 350px;
+        border-radius: 20px;
+    }
+}
+.todo{
+    grid-column: 2/3;
+    border-radius: 20px;
+    
+    & >h2{
+        color: #1a2d4d;
+        margin-top: 30px;
+        margin-left: 50px;
+    }
+    
+}
+.row{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 59px 1fr;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    border-radius: 30px;
+    margin-bottom: 25px;
+    
+    & > form{
+grid-row: 1/2;
+       & > input{
+        
+        border: none;
+        outline: none;
+        background: linear-gradient(135deg,#b3fce0,#b3ccff);
+        padding: 10px;
+        padding-left: 20px;
+        font-weight:600;
+        font-size: 15px;
+        width: 70%;
+        border-radius: 20px;
+       }
+   
+       &> button{
+        border:none;
+        outline: none;
+        
+       background-color:  #1a2d4d;
+        font-weight: var(--font-width-bold);
+        padding: 14px 16px;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 40px;
+        
+        
+      } 
+ }}
+ ul{
+    grid-row: 2/3;
+ }
+ ul li{
+    list-style: none;
+    font-size: 17px;
+    padding: 5px 8px 0px 10px;
+    user-select: none;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    
+}
+ul li button{
+    position: absolute;
+    height: 10px;
+    width: 30px;
+    border-radius: 50%;
+    color:#1a2d4d;
+    background-color: #fff;
+    border: none;
+    right: 75px;
+    font-size: 18px;
+    font-family: 'Aleo';
+}
+ul li.cheked{
+    color: #555;
+    text-decoration: line-through;
+   
+}
+
+@media (max-width: 450px){
+    .container{
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 160px 1fr;
+        height: auto;
+        width: 80%;
+        margin-top: 3%;
+    }
+    .img{
+        grid-column: 1/2;
+        grid-row: 1/2;
+        & >img{
+            width: 150px;
+            height: 150px;
+            padding-left: 20px;
+            padding-top: 20px;
+            border-radius: 0px;
+        }
+    }
+    .todo{
+        grid-column: 1/2;
+        grid-row: 2/3;
+        border-radius: 20px;
+        
+        & >h1{
+            color: #1a2d4d;
+            margin-top: 15px;
+            margin-left: 90px;
+            font-size: 25px;
+        }
+        
+    }
+    .row form input{
+        padding: 7px;
+        padding-left: 20px;
+        font-weight:500;
+        font-size: 15px;
+        width: 68%;
+        margin-left: 27px;
+    }
+    .row form button{   
+        padding: 12px 14px;
+        font-size: 15px;
+   }
+   ul li{
+       list-style: none;
+       font-size: 17px;
+       padding: 5px 0px 0px 30px;
+     }
+     ul li button{
+        right: 34px;
+    }
+}
+
+
+#index {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#index > h1 {
+    margin-bottom: 20px;
+    color:#1a2d4d;
+    text-align: center;
+}
+
+#index > label {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+#index > input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: linear-gradient(135deg,#b3fce0,#b3ccff);
+}
+
+#index > button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #1a2d4d;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+
+#error {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+
+/*
+@import url('https://fonts.googleapis.com/css2?family=Aleo:wght@700&family=Bad+Script&display=swap');
+:root{
+    --button-colot:#F08080;
+    --font-width-reg:400 ;
+    --font-width-bold:700 ;
+
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Bad Script', cursive;
+}
+
+body{
+
+    background: linear-gradient(135deg,#003d26,#1f3e7a);
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.container{
+    background-color: #fff;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    height: auto;
+    width: 58%;
+    font-family: 'poppins' ,sans-serif;
+    border-radius: 20px;
+    margin-top: 3%;
+}
+
+.img{
+    grid-column: 1/2;
+    & >img{
+        width: 300px;
+        height: 300px;
+        border-radius: 20px;
+    }
+}
+.todo{
+    grid-column: 2/3;
+    border-radius: 20px;
+    
+    & >h1{
+        color: #1a2d4d;
+        margin-top: 30px;
+        margin-left: 50px;
+    }
+    
+}
+.row{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 59px 1fr;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    border-radius: 30px;
+    margin-bottom: 25px;
+    
+    & > form{
+grid-row: 1/2;
+       & > input{
+        
+        border: none;
+        outline: none;
+        background: linear-gradient(135deg,#b3fce0,#b3ccff);
+        padding: 10px;
+        padding-left: 20px;
+        font-weight:600;
+        font-size: 15px;
+        width: 70%;
+        border-radius: 20px;
+       }
+   
+       &> button{
+        border:none;
+        outline: none;
+        
+       background-color:  #1a2d4d;
+        font-weight: var(--font-width-bold);
+        padding: 14px 16px;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 40px;
+        
+        
+      } 
+ }}
+
+ ul{
+    grid-row: 2/3;
+ }
+
+ ul li{
+    list-style: none;
+    font-size: 17px;
+    padding: 5px 8px 0px 10px;
+    user-select: none;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    
+}
+ul li button{
+    position: absolute;
+    height: 10px;
+    width: 30px;
+    border-radius: 50%;
+    color:#1a2d4d;
+    background-color: #fff;
+    border: none;
+    right: 75px;
+    font-size: 18px;
+    font-family: 'Aleo';
+}
+ul li.cheked{
+    color: #555;
+    text-decoration: line-through;
+   
+}
+
+@media (max-width: 450px){
+    .container{
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 160px 1fr;
+        height: auto;
+        width: 80%;
+        margin-top: 3%;
+    }
+    .img{
+        grid-column: 1/2;
+        grid-row: 1/2;
+        & >img{
+            width: 150px;
+            height: 150px;
+            padding-left: 20px;
+            padding-top: 20px;
+            border-radius: 0px;
+        }
+    }
+    .todo{
+        grid-column: 1/2;
+        grid-row: 2/3;
+        border-radius: 20px;
+        
+        & >h1{
+            color: #1a2d4d;
+            margin-top: 15px;
+            margin-left: 90px;
+            font-size: 25px;
+        }
+        
+    }
+    .row form input{
+        padding: 7px;
+        padding-left: 20px;
+        font-weight:500;
+        font-size: 15px;
+        width: 68%;
+        margin-left: 27px;
+    }
+    .row form button{   
+        padding: 12px 14px;
+        font-size: 15px;
+   }
+   ul li{
+       list-style: none;
+       font-size: 17px;
+       padding: 5px 0px 0px 30px;
+     }
+     ul li button{
+        right: 34px;
+    }
+}
+*/
+
+
+/*
+   body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        input[type="text"], input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            box-sizing: border-box;
+        }
+        .url-list {
+            list-style: none;
+            padding: 0;
+        }
+        .url-list li {
+            background: #f4f4f4;
+            padding: 10px;
+            margin-bottom: 5px;
+            border-radius: 4px;
+        }
+*/

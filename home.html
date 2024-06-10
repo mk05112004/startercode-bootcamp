@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style/style.css">
+    <title>Home page</title>
+</head>
+<body>
+    <h1 >Welcome to home page</h1>
+    <div class="container">
+        <div class="img">
+            <img src="./images/what-is-the-url.png" alt="ToDo Image">
+        </div>
+        <div class="todo">
+            <h2>URL Shortener</h2>
+            <div class="row">
+                <form action="/add/" method="POST" >
+                    <input type="text" name="description" id="input-boox" placeholder="enter url to shorten">
+                    <button type="submit">Enter</button>
+                </form>
+                <ul id="listContainer">
+                    <!-- Assuming 'data' is a JavaScript array of objects, each with an 'id' and 'description' -->
+                    <!-- The following list items will be dynamically generated using JavaScript -->
+                    
+                    <!-- data.forEach(function(item) {
+                        const id = item.id;
+                        const description = item.description || "No description";
+                        document.write(
+                            <li>${description}
+                                <form action="/delet/${id}" method="POST">
+                                    <button type="submit">delete</button>
+                                </form>
+                            </li>
+                        );
+                    }); -->
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="scripts/home.script.js"></script>
+</body>
+</html>
+<!-- 
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener</title>
+</head>
+<body>
+    <div class="container">
+        <h1>URL Shortener</h1>
+        <form id="urlForm">
+            <input type="text" id="urlInput" placeholder="Enter URL to shorten" required>
+            <input type="submit" value="Shorten URL">
+        </form>
+        <h2>All URLs</h2>
+        <ul id="urlList" class="url-list"></ul>
+    </div>
+    <script>
+        const URL = 'https://infobrains-bc.onrender.com';
+        
+        const createShortURLHandler = async (url) => {
+            try {
+                const token = localStorage.getItem('token');
+                const response = await fetch(`${URL}/private/url`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'auth': token
+                    },
+                    body: JSON.stringify({url})
+                });
+
+                const result = await response.json();
+                return result?.data?.shortUrl || null;
+            } catch (err) {
+                console.error(err);
+            }
+        }
+
+        const getAllUrlsHandler = async () => {
+            try {
+                const token = localStorage.getItem('token');
+                const response = await fetch(`${URL}/private/url`, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'auth': token
+                    }
+                });
+
+                const result = await response.json();
+                return result?.data || null;
+            } catch (err) {
+                console.error(err);
+            }
+        }
+
+        const displayUrls = async () => {
+            const urlList = document.getElementById('urlList');
+            const urls = await getAllUrlsHandler();
+            urlList.innerHTML = '';
+            if (urls) {
+                urls.forEach(url => {
+                    const li = document.createElement('li');
+                    li.textContent = `${url.shortUrl} - ${url.originalUrl}`;
+                    urlList.appendChild(li);
+                });
+            }
+        }
+
+        document.getElementById('urlForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const urlInput = document.getElementById('urlInput').value;
+            const shortUrl = await createShortURLHandler(urlInput);
+            if (shortUrl) {
+                displayUrls();
+                document.getElementById('urlInput').value = '';
+            } else {
+                alert('Failed to shorten URL');
+            }
+        });
+
+        displayUrls();
+
+        const userEmail = localStorage.getItem('email');
+        const username = localStorage.getItem('name');
+
+        console.log(userEmail);
+        console.log(username);
+
+        (() => {
+            const token = localStorage.getItem('token');
+            if (!token) window.location.href = '../index.html';
+        })();
+    </script>
+</body>
+</html>
+
+ -->
+
+
+
+
+
+ 
